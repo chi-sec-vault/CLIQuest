@@ -1,19 +1,16 @@
-import os
+from user import get_user_name
+from menu import show_main_menu
 
-print("Welcome to CLIQuest!")
+print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+print("        🧭 CLIQuest")
+print("   Learn Linux One Quest at a Time")
+print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
 
-if os.path.exists("user.txt"):
-    with open("user.txt", "r") as file:
-        name = file.read()
+name = get_user_name()
 
-    print(f"\n👋 Welcome back, {name}!")
-    print("Ready to conquer today's commands? 🚀")
+print(f"\n👋 Welcome back, {name}!")
+print("Ready to conquer today's commands? 🚀")
 
-else:
-    name = input("\nBefore we begin...\nWhat should I call you? ")
+choice = show_main_menu(name)
 
-    with open("user.txt", "w") as file:
-        file.write(name)
-
-    print(f"\n👋 Welcome {name}! Excited to start this journey with you.")
-    print("Ready to conquer these commands? 🚀")
+print(f"\nYou selected option {choice}.")
