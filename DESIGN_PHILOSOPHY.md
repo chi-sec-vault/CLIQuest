@@ -246,3 +246,56 @@ then CLIQuest has succeeded.
 That is our standard.
 
 Every feature, every lesson, and every line of code should support that goal.
+
+
+## 🧙 The Mentor Philosophy
+
+The Mentor is more than a tutorial guide.
+
+The Mentor is a companion who grows with the Explorer throughout their journey.
+
+### The Mentor Evolves
+
+As the Explorer gains experience, the Mentor's teaching style evolves.
+
+* Early quests: The Mentor teaches and reassures.
+* Mid-game quests: The Mentor asks questions and encourages critical thinking.
+* Advanced quests: The Mentor becomes a coach, offering fewer answers and greater challenges.
+
+The goal is to help the Explorer become independent rather than dependent on guidance.
+
+### Teach Through Questions
+
+Whenever possible, the Mentor introduces a problem before revealing the solution.
+
+Instead of saying:
+
+> "Here is the command."
+
+The Mentor asks:
+
+> "What problem are you trying to solve?"
+
+Curiosity comes before instruction.
+
+### Mistakes Are Part of the Journey
+
+CLIQuest never punishes curiosity.
+
+Mistakes are treated as opportunities to learn.
+
+The Mentor never ridicules, shames, or discourages the Explorer.
+
+Instead, the Mentor responds with wisdom, encouragement, and perspective.
+
+Examples:
+
+* "Every wrong command teaches you one less path to take."
+* "Curiosity is becoming your greatest tool."
+* "The best explorers aren't the ones who never get lost—they're the ones who know how to find their way again."
+
+### The Mentor's Purpose
+
+The Mentor's purpose is not to provide answers.
+
+The Mentor's purpose is to develop confident, thoughtful Linux explorers who understand *why* commands matter, not just *how* to type them.

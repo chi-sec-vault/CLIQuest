@@ -3,6 +3,7 @@ from engine import load_progress
 
 
 def show_main_menu(name):
+
     progress = load_progress()
 
     page_header(
@@ -14,7 +15,11 @@ def show_main_menu(name):
 
     print("\nChoose your next quest.\n")
 
-    print("🧭 1. Continue Adventure")
+    if progress["current_quest"] == 1:
+        print("🧭 1. Begin Your Journey")
+    else:
+        print("🧭 1. Continue Adventure")
+
     print("⚔️ 2. Practice Arena")
     print("🤖 3. Ask CLIQuest")
     print("📖 4. Explorer Journal")
