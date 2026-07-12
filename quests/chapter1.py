@@ -1,5 +1,5 @@
 from ui import card, success, error, prompt, pause
-
+from mentor import say
 
 def quest_1():
 
@@ -11,14 +11,13 @@ def quest_1():
 
     pause()
 
-    card(
-        "📜 STORY",
-        "You've just logged into a Linux machine.\n\n"
-        "Before touching any files or running any commands,\n"
-        "you need to know who Linux thinks you are."
+    say(
+        "Welcome, Explorer.\n\n"
+        "Every Linux journey begins with curiosity.\n\n"
+        "Today, you'll learn your very first Linux command.\n\n"
+        "Take your time.\n\n"
+        "Every Linux professional once stood exactly where you are now."
     )
-
-    pause()
 
     card(
         "🎯 MISSION",
@@ -26,6 +25,15 @@ def quest_1():
     )
 
     pause()
+
+    say(
+        "Explorer...\n\n"
+        "Imagine you've just logged into a Linux machine you've never used before.\n\n"
+        "Before you explore...\n"
+        "Before you change anything...\n\n"
+        "Wouldn't you first want to know who is currently signed in?\n\n"
+        "Let's discover the command that answers that question."
+    )
 
     card(
         "📖 COMMAND",
@@ -39,11 +47,27 @@ def quest_1():
     command = prompt("Type the command exactly as shown")
 
     if command.strip() == "whoami":
+
+        say(
+            "Interesting...\n\n"
+            "So you believe that's the correct command?\n\n"
+            "Let's find out..."
+        )
+
         success(
             "Excellent!\n\n"
             "Now open your Linux terminal and run:\n\n"
             "whoami"
         )
+
+        say(
+            "Excellent work, Explorer.\n\n"
+            "You didn't just learn a command.\n\n"
+            "You learned the very first question every Linux user asks.\n\n"
+            "'Who am I?'\n\n"
+            "Our journey has only just begun."
+        )
+
         return True
 
     error(
