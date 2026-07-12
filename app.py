@@ -1,11 +1,10 @@
 from user import get_user_name
 from menu import show_main_menu
-from lessons import whoami_lesson
+from quests.dispatcher import start_adventure
+from engine import complete_quest
+from ui import banner
 
-print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-print("        🧭 CLIQuest")
-print("   Learn Linux One Quest at a Time")
-print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+banner()
 
 name = get_user_name()
 
@@ -17,7 +16,12 @@ while True:
     choice = show_main_menu(name)
 
     if choice == "1":
-        whoami_lesson()
+        completed = start_adventure()
+        if completed:
+            complete_quest()
+
+        else:
+            print("\n📚 Complete the quest to earn XP.")
 
     elif choice == "2":
         print("\n⚔️ Practice mode is under construction!")

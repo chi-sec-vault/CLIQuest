@@ -1,20 +1,26 @@
+from ui import divider, page_header, prompt
+from engine import load_progress
+
+
 def show_main_menu(name):
-    print("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-    print("🧭 CLIQuest")
-    print(f"Explorer: {name}")
-    print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+    progress = load_progress()
+
+    page_header(
+        name=name,
+        campaign="Linux Foundations",
+        quest=progress["current_quest"],
+        xp=progress["xp"]
+    )
 
     print("\nChoose your next quest.\n")
 
-    print("🌱 1. Learn a Linux Command")
-    print("⚔️ 2. Practice a Command")
+    print("🧭 1. Continue Adventure")
+    print("⚔️ 2. Practice Arena")
     print("🤖 3. Ask CLIQuest")
     print("📖 4. Explorer Journal")
     print("⚙️ 5. Settings")
     print("🚪 0. Exit")
 
-    print("\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+    divider()
 
-    choice = input("> ")
-
-    return choice
+    return prompt("Choose an option")
