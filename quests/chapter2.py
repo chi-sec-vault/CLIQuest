@@ -4,10 +4,10 @@ from mentor import say
 def quest_2():
 
     card(
-         "🧭 QUEST 2 — WHERE AM I?",
-         "Welcome back, Explorer!\n\n"
-         "You've learned who you are.\n\n"
-         "Now it's time to discover where you are."
+        "🧭 QUEST 2 — WHERE AM I?",
+        "Welcome back, Explorer!\n\n"
+        "You've learned who you are.\n\n"
+        "Now it's time to discover where you are."
     )
 
     pause()
@@ -20,11 +20,9 @@ def quest_2():
         "every step becomes a guess."
     )
 
-    pause()
-
     card(
-         "🎯 MISSION",
-         "Discover your current location inside the Linux filesystem."
+        "🎯 MISSION",
+        "Discover your current location inside the Linux filesystem."
     )
 
     pause()
@@ -34,8 +32,6 @@ def quest_2():
         "Think carefully...\n\n"
         "What command could ask Linux where you are?"
     )
-
-    pause()
 
     card(
         "📖 COMMAND",
@@ -61,7 +57,7 @@ def quest_2():
 
     command = prompt("Type the command exactly as shown")
 
-    if command.strip() == "pwd":
+    if command.strip().lower() == "pwd":
 
         say(
             "Interesting...\n\n"
@@ -69,15 +65,20 @@ def quest_2():
             "Let's see where Linux says you are..."
         )
 
-        success(
-               "Mission accomplished!\n\n"
-               "Linux has revealed your current location.\n\n"
-               "Now switch to your Linux terminal and run:\n\n"
-               "pwd"
+        card(
+            "🌍 FIELD MISSION",
+            "Open your Linux terminal.\n\n"
+            "Run:\n\n"
+            "pwd\n\n"
+            "Take a moment to observe the output.\n\n"
+            "• Where are you currently standing in your machine?\n\n"
+            "Press Enter when you're ready to continue."
         )
+        
+        pause()
 
         say(
-            "Excellent work, Explorer.\n\n"
+            "Welcome back, Explorer.\n\n"
             "You now know two important things.\n\n"
             "Who you are.\n"
             "Where you are.\n\n"
@@ -87,14 +88,19 @@ def quest_2():
             "We'll discover that in your next quest."
         )
 
+        success(
+            "Mission accomplished!\n\n"
+            "Linux has revealed your current location using the 'pwd' command."
+        )
+
         return True
 
     error(
-          "Every wrong command teaches you one less path to take.\n\n"
-          "Think carefully...\n\n"
-          "Which command asks Linux where you are?\n\n"
-          "Hint:\n"
-          "It stands for 'Print Working Directory.'"
+        "Every wrong command teaches you one less path to take.\n\n"
+        "Think carefully...\n\n"
+        "Which command asks Linux where you are?\n\n"
+        "Hint:\n"
+        "It stands for 'Print Working Directory.'"
     )
 
     return False

@@ -46,7 +46,7 @@ def quest_1():
 
     command = prompt("Type the command exactly as shown")
 
-    if command.strip() == "whoami":
+    if command.strip().lower() == "whoami": # Added .lower() for safety
 
         say(
             "Interesting...\n\n"
@@ -54,18 +54,29 @@ def quest_1():
             "Let's find out..."
         )
 
-        success(
-            "Excellent!\n\n"
-            "Now open your Linux terminal and run:\n\n"
-            "whoami"
+        card(
+            "🌍 FIELD MISSION",
+            "Open your Linux terminal.\n\n"
+            "Run:\n\n"
+            "whoami\n\n"
+            "Take a moment to observe the output.\n\n"
+            "• Did it print your username?\n\n"
+            "Press Enter when you're ready to continue."
         )
 
+        pause()
+
         say(
-            "Excellent work, Explorer.\n\n"
+            "Welcome back, Explorer.\n\n"
             "You didn't just learn a command.\n\n"
             "You learned the very first question every Linux user asks.\n\n"
             "'Who am I?'\n\n"
             "Our journey has only just begun."
+        )
+        
+        success(
+            "Mission accomplished!\n\n"
+            "You can now discover your identity using the 'whoami' command."
         )
 
         return True
