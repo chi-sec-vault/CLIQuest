@@ -111,30 +111,41 @@ Every quest introduces one command and one new idea.
 - **Simple Explanation:** Create a brand new, empty file.
 - **Why It Matters:** You need a place to write notes, journals, and scripts.
 
-## 🧭 Quest 7 — Read the Scroll
+## 🧭 Quest 7 — The Scribe's Quill
+- **Command:** `nano`
+- **Full Meaning:** Nano's ANOther editor
+- **Simple Explanation:** Open a user-friendly text editor inside the terminal.
+- **Why It Matters:** You need to be able to write and modify your files directly from the command line.
+
+## 🧭 Quest 8 — Read the Scroll
 - **Command:** `cat`
 - **Full Meaning:** Concatenate
 - **Simple Explanation:** Display the contents of a file.
 - **Why It Matters:** Reading files is one of the most common tasks in Linux.
 
-## 🧭 Quest 8 — The Shape Shifter
+## 🧭 Quest 9 — The Stream Director
+- **Command:** `echo` & Redirection (`>`, `>>`)
+- **Full Meaning:** Echo and Redirect Streams
+- **Simple Explanation:** Send text directly into a file without opening an editor.
+- **Why It Matters:** Knowing the difference between Overwrite (`>`) and Append (`>>`) prevents accidental data loss and allows rapid file editing.
+
+## 🧭 Quest 10 — The Shape Shifter
 - **Command:** `mv`
 - **Full Meaning:** Move
 - **Simple Explanation:** Move a file or rename it.
 - **Why It Matters:** One versatile command handles both organization and renaming.
 
-## 🧭 Quest 9 — Make a Copy
+## 🧭 Quest 11 — Make a Copy
 - **Command:** `cp`
 - **Full Meaning:** Copy
 - **Simple Explanation:** Create a duplicate of a file or folder.
 - **Why It Matters:** Backups protect your work from mistakes.
 
-## 🧭 Quest 10 — Leave No Trace
+## 🧭 Quest 12 — Leave No Trace
 - **Command:** `rm` / `rmdir`
 - **Full Meaning:** Remove
 - **Simple Explanation:** Delete files or empty folders.
 - **Why It Matters:** Keeping your workspace clean is part of good Linux hygiene.
-
 ---
 
 # 🏁 Final Mission — Operation: Lost Evidence
