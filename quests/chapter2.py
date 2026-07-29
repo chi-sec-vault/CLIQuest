@@ -55,52 +55,50 @@ def quest_2():
 
     pause()
 
-    command = prompt("Type the command exactly as shown")
+# Wrap input in a continuous loop for a smooth retry experience
+    while True:
 
-    if command.strip().lower() == "pwd":
+        command = prompt("Type the command exactly as shown")
 
-        say(
-            "Interesting...\n\n"
-            "Curiosity has guided you well.\n\n"
-            "Let's see where Linux says you are..."
+        if command.strip().lower() == "pwd":
+
+            say(
+                "Interesting...\n\n"
+                "Curiosity has guided you well.\n\n"
+                "Let's see where Linux says you are..."
+            )
+
+            card(
+                "🌍 FIELD MISSION",
+                "Open your Linux terminal.\n\n"
+                "Run:\n\n"
+                "pwd\n\n"
+                "Take a moment to observe the output.\n\n"
+                "• Where are you currently standing in your machine?\n\n"
+                "Press Enter when you're ready to continue."
+            )
+            
+            pause()
+
+            say(
+                "Welcome back, Explorer.\n\n"
+                "You now know two important things.\n\n"
+                "Who you are.\n"
+                "Where you are.\n\n"
+                "A true explorer is never lost.\n\n"
+                "But tell me...\n\n"
+                "What surrounds you?\n\n"
+                "We'll discover that in your next quest."
+            )
+
+            success(
+                "Mission accomplished!\n\n"
+                "Linux has revealed your current location using the 'pwd' command."
+            )
+
+            return True
+
+# Themed retry prompt for Chapter 2
+        error(
+            "You wandered off the map, Explorer. Take a breath and check your coordinates again!"
         )
-
-        card(
-            "🌍 FIELD MISSION",
-            "Open your Linux terminal.\n\n"
-            "Run:\n\n"
-            "pwd\n\n"
-            "Take a moment to observe the output.\n\n"
-            "• Where are you currently standing in your machine?\n\n"
-            "Press Enter when you're ready to continue."
-        )
-        
-        pause()
-
-        say(
-            "Welcome back, Explorer.\n\n"
-            "You now know two important things.\n\n"
-            "Who you are.\n"
-            "Where you are.\n\n"
-            "A true explorer is never lost.\n\n"
-            "But tell me...\n\n"
-            "What surrounds you?\n\n"
-            "We'll discover that in your next quest."
-        )
-
-        success(
-            "Mission accomplished!\n\n"
-            "Linux has revealed your current location using the 'pwd' command."
-        )
-
-        return True
-
-    error(
-        "Every wrong command teaches you one less path to take.\n\n"
-        "Think carefully...\n\n"
-        "Which command asks Linux where you are?\n\n"
-        "Hint:\n"
-        "It stands for 'Print Working Directory.'"
-    )
-
-    return False

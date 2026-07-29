@@ -44,47 +44,47 @@ def quest_1():
 
     pause()
 
-    command = prompt("Type the command exactly as shown")
+# Wrap input in a continuous loop for a smooth retry experience
+    while True:
 
-    if command.strip().lower() == "whoami": # Added .lower() for safety
+        command = prompt("Type the command exactly as shown")
 
-        say(
-            "Interesting...\n\n"
-            "So you believe that's the correct command?\n\n"
-            "Let's find out..."
+        if command.strip().lower() == "whoami": # Added .lower() for safety
+
+            say(
+                "Interesting...\n\n"
+                "So you believe that's the correct command?\n\n"
+                "Let's find out..."
+            )
+
+            card(
+                "🌍 FIELD MISSION",
+                "Open your Linux terminal.\n\n"
+                "Run:\n\n"
+                "whoami\n\n"
+                "Take a moment to observe the output.\n\n"
+                "• Did it print your username?\n\n"
+                "Press Enter when you're ready to continue."
+            )
+
+            pause()
+
+            say(
+                "Welcome back, Explorer.\n\n"
+                "You didn't just learn a command.\n\n"
+                "You learned the very first question every Linux user asks.\n\n"
+                "'Who am I?'\n\n"
+                "Our journey has only just begun."
+            )
+            
+            success(
+                "Mission accomplished!\n\n"
+                "You can now discover your identity using the 'whoami' command."
+            )
+
+            return True
+
+# Themed retry prompt for Chapter 1
+        error(
+            "The mirror reflects only shadows, Explorer. Take another look at the question and try your identity again!"
         )
-
-        card(
-            "🌍 FIELD MISSION",
-            "Open your Linux terminal.\n\n"
-            "Run:\n\n"
-            "whoami\n\n"
-            "Take a moment to observe the output.\n\n"
-            "• Did it print your username?\n\n"
-            "Press Enter when you're ready to continue."
-        )
-
-        pause()
-
-        say(
-            "Welcome back, Explorer.\n\n"
-            "You didn't just learn a command.\n\n"
-            "You learned the very first question every Linux user asks.\n\n"
-            "'Who am I?'\n\n"
-            "Our journey has only just begun."
-        )
-        
-        success(
-            "Mission accomplished!\n\n"
-            "You can now discover your identity using the 'whoami' command."
-        )
-
-        return True
-
-    error(
-        "Not quite.\n\n"
-        "The correct command is:\n\n"
-        "whoami"
-    )
-
-    return False

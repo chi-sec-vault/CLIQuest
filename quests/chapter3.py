@@ -92,52 +92,51 @@ def quest_3():
 
     pause()
 
-    command = prompt("Type the command that lists everything around you")
+# Wrap input in a continuous loop for a smooth retry experience
+    while True:
 
-    if command.strip().lower() == "ls":
+        command = prompt("Type the command that lists everything around you")
 
-        say(
-            "Excellent work, Explorer.\n\n"
-            "You've opened your eyes.\n\n"
-            "A wise explorer never walks blindly."
+        if command.strip().lower() == "ls":
+
+            say(
+                "Excellent work, Explorer.\n\n"
+                "You've opened your eyes.\n\n"
+                "A wise explorer never walks blindly."
+            )
+            
+            pause()
+
+            card(
+                "🌍 FIELD MISSION",
+                "Open your Linux terminal.\n\n"
+                "Run:\n\n"
+                "ls\n\n"
+                "Take a moment to observe the output.\n\n"
+                "• Which files do you recognize?\n"
+                "• Can you spot the CLIQuest folder?\n\n"
+                "Press Enter when you're ready to continue."
+            )
+
+            pause() 
+
+            say(
+                "Welcome back, Explorer.\n\n"
+                "Real explorers don't just study maps.\n"
+                "They walk the terrain.\n\n"
+                "Now you know what surrounds you.\n\n"
+                "Next, you'll learn how to move through this world."
+            )
+
+            success(
+                "Mission accomplished!\n\n"
+                "You can now reveal the files and folders\n"
+                "around you using the 'ls' command."
+            )
+
+            return True
+
+# Themed retry prompt for Chapter 3
+        error(
+            "Your eyes are still closed to the room, Explorer. Open them up and try observing your surroundings again!"
         )
-        
-        pause()
-
-        card(
-            "🌍 FIELD MISSION",
-            "Open your Linux terminal.\n\n"
-            "Run:\n\n"
-            "ls\n\n"
-            "Take a moment to observe the output.\n\n"
-            "• Which files do you recognize?\n"
-            "• Can you spot the CLIQuest folder?\n\n"
-            "Press Enter when you're ready to continue."
-        )
-
-        pause() 
-
-        say(
-            "Welcome back, Explorer.\n\n"
-            "Real explorers don't just study maps.\n"
-            "They walk the terrain.\n\n"
-            "Now you know what surrounds you.\n\n"
-            "Next, you'll learn how to move through this world."
-        )
-
-        success(
-            "Mission accomplished!\n\n"
-            "You can now reveal the files and folders\n"
-            "around you using the 'ls' command."
-        )
-
-        return True
-
-    error(
-        "Almost there, Explorer.\n\n"
-        "The command you're looking for is:\n\n"
-        "ls\n\n"
-        "It lists the files and folders around you."
-    )
-
-    return False

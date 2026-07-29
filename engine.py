@@ -30,3 +30,11 @@ def complete_quest():
     print(f"📜 Next Quest: {progress['current_quest']}")
     print("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
 
+# Reset the Explorer's progress back to the beginning
+def reset_progress():
+    default_progress = {
+        "current_campaign": 1,
+        "current_quest": 1,
+        "xp": 0
+    }
+    save_progress(default_progress)

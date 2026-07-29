@@ -69,45 +69,45 @@ def quest_5():
         "Run 'ls' after building a room, and you will see it standing right in front of you."
     )
 
-    command = prompt("Type the command to create a directory named outpost")
+# Wrap input in a continuous loop for a smooth retry experience
+    while True:
 
-    if command.strip().lower() == "mkdir outpost":
+        command = prompt("Type the command to create a directory named outpost")
 
-        say(
-            "The ground shifts.\n\n"
-            "A new path has been created."
+        if command.strip().lower() == "mkdir outpost":
+
+            say(
+                "The ground shifts.\n\n"
+                "A new path has been created."
+            )
+
+            card(
+                "🌍 FIELD MISSION",
+                "Open your Linux terminal.\n\n"
+                "Since you used 'cd data' earlier, you are currently standing inside the data folder.\n\n"
+                "Run this exact sequence:\n\n"
+                "1. mkdir outpost   (To build your new room)\n"
+                "2. ls               (To look around and verify it exists)\n"
+                "3. cd outpost       (To walk inside the room you just built!)\n\n"
+                "Press Enter when you're ready to continue."
+            )
+
+            pause()
+
+            say(
+                "Welcome to your new room, Explorer.\n\n"
+                "A room that did not exist until you commanded it to.\n\n"
+                "You are no longer just a traveler. You are an architect."
+            )
+
+            success(
+                "Mission accomplished!\n\n"
+                "You can now create new folders using the 'mkdir' command."
+            )
+
+            return True
+
+        # Themed retry prompt for Chapter 5
+        error(
+            "The blueprints didn't hold, Explorer. Take a deep breath and try drafting the command again!"
         )
-
-        card(
-            "🌍 FIELD MISSION",
-            "Open your Linux terminal.\n\n"
-            "Since you used 'cd data' earlier, you are currently standing inside the data folder.\n\n"
-            "Run this exact sequence:\n\n"
-            "1. mkdir outpost   (To build your new room)\n"
-            "2. ls              (To look around and verify it exists)\n"
-            "3. cd outpost      (To walk inside the room you just built!)\n\n"
-            "Press Enter when you're ready to continue."
-        )
-
-        pause()
-
-        say(
-            "Welcome to your new room, Explorer.\n\n"
-            "A room that did not exist until you commanded it to.\n\n"
-            "You are no longer just a traveler. You are an architect."
-        )
-
-        success(
-            "Mission accomplished!\n\n"
-            "You can now create new folders using the 'mkdir' command."
-        )
-
-        return True
-
-    error(
-        "Your construction failed.\n\n"
-        "The command you are looking for is:\n\n"
-        "mkdir outpost"
-    )
-
-    return False

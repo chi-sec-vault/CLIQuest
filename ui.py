@@ -1,20 +1,22 @@
-WIDTH = 60
+from rich.console import Console
+from rich.panel import Panel
+from rich.text import Text
+from rich.prompt import Prompt
 
+WIDTH = 60
+console = Console()
 
 def divider():
     """Print a horizontal divider."""
-    print("━" * WIDTH)
-
+    console.print("━" * WIDTH, style="dim yellow")
 
 def blank():
     """Print a blank line."""
-    print()
-
+    console.print()
 
 def center(text):
     """Center text on the terminal."""
-    print(text.center(WIDTH))
-
+    console.print(text.center(WIDTH), style="bold cyan")
 
 def banner():
     """Display the CLIQuest banner."""
@@ -23,52 +25,63 @@ def banner():
     center("Learn Linux One Quest at a Time")
     divider()
 
-
 def page_header(name, campaign, quest, xp):
     """Display Explorer information."""
     blank()
-    print(f"🧑 Explorer : {name}")
-    print(f"🗺️ Campaign : {campaign}")
-    print(f"📜 Quest    : {quest}")
-    print(f"⭐ XP       : {xp}")
+    console.print(f"[bold white]🧑 Explorer :[/bold white] {name}")
+    console.print(f"[bold white]🗺️ Campaign :[/bold white] {campaign}")
+    console.print(f"[bold white]📜 Quest    :[/bold white] {quest}")
+    console.print(f"[bold white]⭐ XP       :[/bold white] {xp}")
     divider()
 
-
-def card(title, body):
-    """Display a content card."""
+def card(title, content):
+    """Display a content card using Rich panels."""
     blank()
-    divider()
-    print(title)
-    divider()
+    formatted_content = Text(content, style="bright_white")
+    panel = Panel(
+        formatted_content,
+        title=f"[bold yellow] {title} [/bold yellow]",
+        title_align="left",
+        border_style="yellow",
+        padding=(1, 2)
+    )
+    console.print(panel)
     blank()
-    print(body)
-    blank()
-    divider()
-
 
 def success(message):
     """Display a success message."""
     blank()
-    divider()
-    print("🎉 SUCCESS")
-    divider()
-    print(message)
-    divider()
-
+    formatted_message = Text(message, style="bold bright_green")
+    panel = Panel(
+        formatted_message,
+        title="[bold green] 🎉 SUCCESS [/bold green]",
+        title_align="left",
+        border_style="green",
+        padding=(1, 2)
+    )
+    console.print(panel)
 
 def error(message):
     """Display an error message."""
     blank()
-    divider()
-    print("❌ Oops!")
-    divider()
-    print(message)
-    divider()
-
+    formatted_message = Text(message, style="bright_red")
+    panel = Panel(
+        formatted_message,
+        title="[bold red] 💡 Gentle Guidance [/bold red]",
+        title_align="left",
+        border_style="red",
+        padding=(1, 2)
+    )
+    console.print(panel)
 
 def prompt(message):
     """Display a styled input prompt."""
-    return input(f"\n👉 {message}: ")
+    console.print()
+    ans = Prompt.ask(f"[bold magenta]👉 {message}[/bold magenta]")
+    return ans
 
 def pause():
-    input("\nPress Enter to continue...")
+    """Pauses the game flow until the user presses Enter."""
+    console.print("\n[dim]Press Enter to continue...[/dim]")
+    input()
+    console.clear()

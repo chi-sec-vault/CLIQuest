@@ -59,45 +59,45 @@ def quest_6():
 
     pause()
 
-    command = prompt("Type the command to create your journal file")
+# Wrap input in a continuous loop for a smooth retry experience
+    while True:
 
-    if command.strip().lower() == "touch journal.txt":
+        command = prompt("Type the command to create your journal file")
 
-        say(
-            "There it is.\n\n"
-            "A blank page waiting for your commands.\n"
-            "Your camp is fully established."
+        if command.strip().lower() == "touch journal.txt":
+
+            say(
+                "There it is.\n\n"
+                "A blank page waiting for your commands.\n"
+                "Your camp is fully established."
+            )
+
+            card(
+                "🌍 FIELD MISSION",
+                "Open your Linux terminal.\n\n"
+                "If you just finished Quest 5, you should currently be standing inside your 'outpost' directory.\n\n"
+                "Run this exact sequence:\n\n"
+                "1. touch journal.txt   (To create your blank file)\n"
+                "2. ls                  (To verify that your journal now sits on the desk)\n\n"
+                "Press Enter when you're ready to continue."
+            )
+
+            pause()
+
+            say(
+                "Excellent work, Explorer.\n\n"
+                "You now know how to look around, move, build, and create.\n\n"
+                "You are officially a Linux user."
+            )
+
+            success(
+                "Mission accomplished!\n\n"
+                "You can now create files using the 'touch' command."
+            )
+
+            return True
+
+        # Themed retry prompt for Chapter 6
+        error(
+            "The pen slipped on the blank page, Explorer. Take another look at the syntax and try writing the command again!"
         )
-
-        card(
-            "🌍 FIELD MISSION",
-            "Open your Linux terminal.\n\n"
-            "If you just finished Quest 5, you should currently be standing inside your 'outpost' directory.\n\n"
-            "Run this exact sequence:\n\n"
-            "1. touch journal.txt   (To create your blank file)\n"
-            "2. ls                  (To verify that your journal now sits on the desk)\n\n"
-            "Press Enter when you're ready to continue."
-        )
-
-        pause()
-
-        say(
-            "Excellent work, Explorer.\n\n"
-            "You now know how to look around, move, build, and create.\n\n"
-            "You are officially a Linux user."
-        )
-
-        success(
-            "Mission accomplished!\n\n"
-            "You can now create files using the 'touch' command."
-        )
-
-        return True
-
-    error(
-        "The page remains blank.\n\n"
-        "The command you are looking for is:\n\n"
-        "touch journal.txt"
-    )
-
-    return False

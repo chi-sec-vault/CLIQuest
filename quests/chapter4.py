@@ -79,45 +79,45 @@ def quest_4():
         "You cannot walk into a room that doesn't exist."
     )
 
-    command = prompt("Type the command to move into the data directory")
+# Wrap input in a continuous loop for a smooth retry experience
+    while True:
 
-    # We check for exactly "cd data"
-    if command.strip().lower() == "cd data":
+        command = prompt("Type the command to move into the data directory")
 
-        say(
-            "Excellent.\n\n"
-            "You've just crossed the threshold."
+        # We check for exactly "cd data"
+        if command.strip().lower() == "cd data":
+
+            say(
+                "Excellent.\n\n"
+                "You've just crossed the threshold."
+            )
+
+            card(
+                "🌍 FIELD MISSION",
+                "Open your Linux terminal.\n\n"
+                "Run this exact sequence of commands:\n\n"
+                "1. ls       (To look at the doors)\n"
+                "2. cd data  (To walk through the door)\n"
+                "3. pwd      (To prove to yourself that your location changed!)\n\n"
+                "Press Enter when you're ready to continue."
+            )
+
+            pause() 
+
+            say(
+                "Welcome to a new room, Explorer.\n\n"
+                "You are no longer just looking at the world.\n"
+                "You are moving through it."
+            )
+
+            success(
+                "Mission accomplished!\n\n"
+                "You can now navigate between folders using the 'cd' command."
+            )
+
+            return True
+
+        # Themed retry prompt that encourages them without handing them the exact string
+        error(
+            "You bumped into a closed door, Explorer. Take a breath and try the path again!"
         )
-
-        card(
-            "🌍 FIELD MISSION",
-            "Open your Linux terminal.\n\n"
-            "Run this exact sequence of commands:\n\n"
-            "1. ls       (To look at the doors)\n"
-            "2. cd data  (To walk through the door)\n"
-            "3. pwd      (To prove to yourself that your location changed!)\n\n"
-            "Press Enter when you're ready to continue."
-        )
-
-        pause() 
-
-        say(
-            "Welcome to a new room, Explorer.\n\n"
-            "You are no longer just looking at the world.\n"
-            "You are moving through it."
-        )
-
-        success(
-            "Mission accomplished!\n\n"
-            "You can now navigate between folders using the 'cd' command."
-        )
-
-        return True
-
-    error(
-        "You bumped into a wall, Explorer.\n\n"
-        "The command you're looking for is:\n\n"
-        "cd data"
-    )
-
-    return False
