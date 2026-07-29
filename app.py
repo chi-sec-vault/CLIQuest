@@ -2,6 +2,7 @@ from user import get_user_name
 from menu import show_main_menu
 from quests.dispatcher import start_adventure
 from engine import complete_quest
+from settings import show_settings  # <--- Import the settings menu
 from ui import banner
 
 banner()
@@ -33,7 +34,7 @@ while True:
         print("\n📖 Explorer Journal coming soon!")
 
     elif choice == "5":
-        print("\n⚙️ Settings coming soon!")
+        show_settings()  # <--- Call the settings menu function here!
 
     elif choice == "0":
         print(f"\n👋 See you on your next quest, {name}!")
