@@ -103,4 +103,7 @@ def pause():
         console.print("\n[bold yellow]🚪 Aborting... Teleporting back to Main Menu![/bold yellow]\n")
         os.execl(sys.executable, sys.executable, *sys.argv)
         
-    console.clear()
+    # Replaced console.clear() with a clean divider and blank space
+    blank()
+    divider()
+    blank()
