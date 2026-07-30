@@ -93,6 +93,14 @@ def prompt(message):
 
 def pause():
     """Pauses the game flow until the user presses Enter."""
-    console.print("\n[dim]Press Enter to continue...[/dim]")
-    input()
+    console.print("\n[dim]Press Enter to continue (or type 'menu' to exit)...[/dim]")
+    
+    # Capture what the user types (even if it's just hitting Enter)
+    ans = input().strip().lower()
+    
+    # Check if they want to escape
+    if ans in ["exit", "quit", "menu"]:
+        console.print("\n[bold yellow]🚪 Aborting... Teleporting back to Main Menu![/bold yellow]\n")
+        os.execl(sys.executable, sys.executable, *sys.argv)
+        
     console.clear()
