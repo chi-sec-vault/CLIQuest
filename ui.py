@@ -1,3 +1,5 @@
+import sys
+import os
 from rich.console import Console
 from rich.panel import Panel
 from rich.text import Text
@@ -78,6 +80,15 @@ def prompt(message):
     """Display a styled input prompt."""
     console.print()
     ans = Prompt.ask(f"[bold magenta]👉 {message}[/bold magenta]")
+    
+    # The Escape Hatch
+    clean_ans = ans.strip().lower()
+    if clean_ans in ["exit", "quit", "menu"]:
+        console.print("\n[bold yellow]🚪 Aborting quest... Teleporting back to Main Menu![/bold yellow]\n")
+        
+        # This cleanly restarts the entire Python script from the beginning
+        os.execl(sys.executable, sys.executable, *sys.argv)
+        
     return ans
 
 def pause():
