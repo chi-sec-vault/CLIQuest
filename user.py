@@ -10,6 +10,10 @@ def get_user_name():
 
     name = input("\nBefore we begin...\nWhat should I call you? ")
 
+    # Ensure the 'data' folder exists before trying to save the user file
+    if not os.path.exists("data"):
+        os.makedirs("data")
+
     with open(USER_FILE, "w") as file:
         file.write(name)
 
