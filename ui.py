@@ -45,10 +45,10 @@ def card(title, content):
         title=f"[bold yellow] {title} [/bold yellow]",
         title_align="left",
         border_style="yellow",
-        padding=(1, 2)
+        padding=(0, 2)  # Changed from (1, 2) to remove extra inner blank lines
     )
     console.print(panel)
-    blank()
+    # Removed the blank() here so multiple cards don't double-space
 
 def success(message):
     """Display a success message."""
@@ -59,7 +59,7 @@ def success(message):
         title="[bold green] 🎉 SUCCESS [/bold green]",
         title_align="left",
         border_style="green",
-        padding=(1, 2)
+        padding=(0, 2)  # Changed from (1, 2)
     )
     console.print(panel)
 
@@ -72,7 +72,7 @@ def error(message):
         title="[bold red] 💡 Gentle Guidance [/bold red]",
         title_align="left",
         border_style="red",
-        padding=(1, 2)
+        padding=(0, 2)  # Changed from (1, 2)
     )
     console.print(panel)
 
