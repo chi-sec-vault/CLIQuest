@@ -13,8 +13,9 @@ def divider():
     console.print("━" * WIDTH, style="dim yellow")
 
 def blank():
-    """Print a blank line."""
-    console.print()
+    """Print 4 blank lines."""
+    for _ in range(4):
+        console.print()
 
 def center(text):
     """Center text on the terminal."""
