@@ -12,6 +12,7 @@ from quests.chapter10 import quest_10  # <--- Import Chapter 10
 from quests.chapter11 import quest_11  # <--- At the top
 from quests.chapter12 import quest_12
 from quests.linux_survivor import survivor_challenge  # <--- Import the survivor trial
+
 # Import Campaign 2 chapters
 from quests.chapter13 import quest_c2_q1  # find
 from quests.chapter14 import quest_c2_q2  # locate
@@ -20,6 +21,16 @@ from quests.chapter16 import quest_c2_q4  # Pipe |
 from quests.chapter17 import quest_c2_q5  # head
 from quests.chapter18 import quest_c2_q6  # tail
 from quests.linux_detective import quest_c2_boss  # Final Exam
+
+# --- CAMPAIGN 3 IMPORTS ---
+from quests.chapter19 import quest_19  # ls -a
+from quests.chapter20 import quest_20  # ls -la
+from quests.chapter21 import quest_21  # sudo
+from quests.chapter22 import quest_22  # su
+from quests.chapter23 import quest_23  # id
+from quests.chapter24 import quest_24  # chmod
+from quests.chapter25 import quest_25  # chown
+from quests.guardian_of_linux import challenge_3  # Lockdown Boss Fight
 
 def start_adventure(replay_quest=None):
     # If a specific quest is passed via Replay Mode, use it!
@@ -69,6 +80,7 @@ def start_adventure(replay_quest=None):
     elif current == 13:
         return survivor_challenge()
 
+# --- CAMPAIGN 2: LINUX DETECTIVE ---
     elif current == 14:
         return quest_c2_q1()
 
@@ -89,6 +101,16 @@ def start_adventure(replay_quest=None):
 
     elif current == 20:
         return quest_c2_boss()
+
+# --- CAMPAIGN 3: GUARDIANS OF LINUX ---
+    elif current == 21: return quest_19()
+    elif current == 22: return quest_20()
+    elif current == 23: return quest_21()
+    elif current == 24: return quest_22()
+    elif current == 25: return quest_23()
+    elif current == 26: return quest_24()
+    elif current == 27: return quest_25()
+    elif current == 28: return challenge_3()
 
     print("\n🚧 More quests coming soon!")
 

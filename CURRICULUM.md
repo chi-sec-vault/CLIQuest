@@ -77,75 +77,52 @@ Every quest introduces one command and one new idea.
 
 ## 🧭 Quest 1 — Who Am I?
 - **Command:** `whoami`
-- **Full Meaning:** Who Am I
 - **Simple Explanation:** Show the username of the person currently using Linux.
-- **Why It Matters:** Knowing your current user helps you understand your permissions and confirms which account you're using.
 
 ## 🧭 Quest 2 — Where Am I?
 - **Command:** `pwd`
-- **Full Meaning:** Print Working Directory
 - **Simple Explanation:** Show me the folder I'm currently in.
-- **Why It Matters:** Before working with files or folders, you should always know your location.
 
 ## 🧭 Quest 3 — What's Around Me?
 - **Command:** `ls`
-- **Full Meaning:** List
 - **Simple Explanation:** Show the files and folders in my current location.
-- **Why It Matters:** Before opening or editing files, you need to know what exists around you.
 
 ## 🧭 Quest 4 — Time to Explore
 - **Command:** `cd`
-- **Full Meaning:** Change Directory
 - **Simple Explanation:** Move from one folder to another.
-- **Why It Matters:** Linux work involves moving between directories constantly.
 
 ## 🧭 Quest 5 — Build Your Base
 - **Command:** `mkdir`
-- **Full Meaning:** Make Directory
 - **Simple Explanation:** Create a new folder.
-- **Why It Matters:** Folders help organize your work and projects.
 
 ## 🧭 Quest 6 — Leave Your Mark
 - **Command:** `touch`
-- **Full Meaning:** Touch (Create File)
 - **Simple Explanation:** Create a brand new, empty file.
-- **Why It Matters:** You need a place to write notes, journals, and scripts.
 
 ## 🧭 Quest 7 — The Scribe's Quill
 - **Command:** `nano`
-- **Full Meaning:** Nano's ANOther editor
 - **Simple Explanation:** Open a user-friendly text editor inside the terminal.
-- **Why It Matters:** You need to be able to write and modify your files directly from the command line.
 
 ## 🧭 Quest 8 — Read the Scroll
 - **Command:** `cat`
-- **Full Meaning:** Concatenate
 - **Simple Explanation:** Display the contents of a file.
-- **Why It Matters:** Reading files is one of the most common tasks in Linux.
 
 ## 🧭 Quest 9 — The Stream Director
 - **Command:** `echo` & Redirection (`>`, `>>`)
-- **Full Meaning:** Echo and Redirect Streams
 - **Simple Explanation:** Send text directly into a file without opening an editor.
-- **Why It Matters:** Knowing the difference between Overwrite (`>`) and Append (`>>`) prevents accidental data loss and allows rapid file editing.
 
 ## 🧭 Quest 10 — The Shape Shifter
 - **Command:** `mv`
-- **Full Meaning:** Move
 - **Simple Explanation:** Move a file or rename it.
-- **Why It Matters:** One versatile command handles both organization and renaming.
 
 ## 🧭 Quest 11 — Make a Copy
 - **Command:** `cp`
-- **Full Meaning:** Copy
 - **Simple Explanation:** Create a duplicate of a file or folder.
-- **Why It Matters:** Backups protect your work from mistakes.
 
 ## 🧭 Quest 12 — Leave No Trace
 - **Command:** `rm` / `rmdir`
-- **Full Meaning:** Remove
 - **Simple Explanation:** Delete files or empty folders.
-- **Why It Matters:** Keeping your workspace clean is part of good Linux hygiene.
+
 ---
 
 # 🏁 Final Mission — Operation: Lost Evidence
@@ -153,16 +130,6 @@ Every quest introduces one command and one new idea.
 A senior cybersecurity analyst accidentally left important evidence somewhere on a Linux server.
 
 Your mission is to find it, navigate through the system, organize the evidence, make a backup, and prepare it for investigation.
-
-You'll complete this mission using every command you've learned. No hints. Just your skills.
-
----
-
-# 🏆 Campaign Reward
-
-Congratulations, Explorer! You have completed your first Linux campaign.
-
-You've learned that Linux commands are not random letters—they are meaningful tools that solve real problems.
 
 **Achievement Unlocked:** 🏅 *Linux Survivor*
 
@@ -176,46 +143,114 @@ Now that you know how to navigate and manage files, it's time to find needles in
 
 ## 🧭 Chapter 13 — The Grid Search
 - **Command:** `find`
-- **Full Meaning:** Find files in a directory hierarchy
 - **Simple Explanation:** Search the live filesystem dynamically based on criteria like names or types.
 
 ## 🧭 Chapter 14 — The Index Query
 - **Command:** `locate`
-- **Full Meaning:** Locate files in database
 - **Simple Explanation:** Instantly search a pre-built system index instead of crawling the hard drive.
 
 ## 🧭 Chapter 15 — The Filter
 - **Command:** `grep`
-- **Full Meaning:** Global Regular Expression Print
 - **Simple Explanation:** Search inside text files for specific words or patterns.
 
 ## 🧭 Chapter 16 — The Assembly Line
 - **Command:** `|` (The Pipe)
-- **Full Meaning:** Pipe output to another command
 - **Simple Explanation:** Connect multiple tools together so data flows directly from one to the next.
 
 ## 🧭 Chapter 17 — The Sneak Peek
 - **Command:** `head`
-- **Full Meaning:** Print the top of a file
 - **Simple Explanation:** Instantly view the first 10 lines of a massive file without flooding your screen.
 
 ## 🧭 Chapter 18 — The Stakeout
 - **Command:** `tail`
-- **Full Meaning:** Print the bottom of a file
 - **Simple Explanation:** Read the most recent entries at the end of a log file or watch events live (`-f`).
 
 ---
 
 # 🏁 Campaign 2 Final Exam — The Rogue Agent
 
-A rogue agent has infiltrated the system and is tampering with files. Using `locate`, `tail`, and the Pipe operator with real system files (`sshd_config`, `/etc/passwd`, `/etc/services`), you track them down and lock them out.
+A rogue agent has infiltrated the system and is tampering with files. Using `locate`, `tail`, and the Pipe operator with real system files, you track them down and lock them out.
 
 **Achievement Unlocked:** 🎖️ *The Linux Detective Badge*
 
 ---
+
+# 🛡️ Campaign 3 — Guardians of Linux
+
+## Story
+You tracked down the rogue agent's tracks in Campaign 2, but the threat isn't over. To truly secure the server, you must step up from a Detective to a Guardian—learning to reveal hidden files, inspect permissions, wield administrative authority, and lock down system assets.
+
+---
+
+## 🧭 Chapter 19 — The Blind Spot
+- **Command:** `ls -a`
+- **Simple Explanation:** Reveal hidden dotfiles (like `.bashrc`) that normal `ls` ignores.
+
+## 🧭 Chapter 20 — The Long View
+- **Command:** `ls -la`
+- **Simple Explanation:** Combine sight (`-a`) and detailed inspection (`-l`) to reveal permissions, ownership, file size, and dates.
+
+## 🧭 Chapter 21 — The Surgical Strike
+- **Command:** `sudo`
+- **Simple Explanation:** Temporarily execute a single command with root privileges.
+
+## 🧭 Chapter 22 — The Master Key
+- **Command:** `su` / `su root`
+- **Simple Explanation:** Swap your entire active user session to the root administrator.
+
+## 🧭 Chapter 23 — The Watchtower
+- **Command:** `id`
+- **Simple Explanation:** Display your numerical User ID (UID), Group ID (GID), and group memberships.
+
+## 🧭 Chapter 24 — The Locksmith
+- **Command:** `chmod`
+- **Simple Explanation:** Add or remove read (`r`), write (`w`), or execute (`x`) permissions on a file.
+
+## 🧭 Chapter 25 — The Title Deed
+- **Command:** `chown`
+- **Simple Explanation:** Reassign ownership of a file to a new user.
+
+---
+
+# 🏁 Campaign 3 Final Mission — The Vault Lockdown
+
+An automated security protocol has locked down the server. You must bypass the lockdown, claim an override file, and execute it using `id`, `sudo`, `su`, `chown`, and `chmod` in a high-stakes sequence.
+
+**Achievement Unlocked:** 🛡️ *Guardian of Linux*
+
+---
+
+# 🌐 Campaign 4 — Network Explorer
+
+## Story
+Up until now, you've been exploring a single island: your own local machine. But Linux is built for the open ocean. It's time to make contact with the outside world, discover your network identity, and interact with remote servers.
+
+---
+
+## 🧭 Chapter 26 — The Sonar
+- **Command:** `ping`
+- **Full Meaning:** Packet InterNet Groper
+- **Simple Explanation:** Send a network pulse to a remote server to verify it is online and reachable.
+
+## 🧭 Chapter 27 — The Address Book
+- **Command:** `ip a` (or `ifconfig`)
+- **Full Meaning:** IP Address
+- **Simple Explanation:** Discover your machine's own network identity and local IP address.
+
+## 🧭 Chapter 28 — The Downloader
+- **Command:** `wget`
+- **Full Meaning:** Web Get
+- **Simple Explanation:** Pull files and tools directly from the internet into your terminal.
+
+## 🧭 Chapter 29 — The Radar
+- **Command:** `ss` / `netstat`
+- **Full Meaning:** Socket Statistics
+- **Simple Explanation:** Scan your own system to see what network ports are open and listening.
+
+*(Boss Fight to be mapped out!)*
+
+---
 # 🚀 Future Campaigns
 
-- **Campaign 3 — File Guardians:** Master permissions using `chmod`, `chown`, and `sudo`.
-- **Campaign 4 — Network Explorer:** Explore networking using `ping`, `ip`, `curl`, and `ss`.
-- **Campaign 5 — Cybersecurity Explorer:** Apply Linux skills to security scenarios using `ssh`, `scp`, `nmap`, and `journalctl`.
-- **Campaign 6 — Shell Master:** Unlock automation, pipes, redirection, and Bash scripting.
+- **Campaign 5 — System Defender:** Apply Linux skills to security scenarios using `ssh`, `scp`, and `systemctl`.
+- **Campaign 6 — Shell Master:** Master advanced bash scripting, aliases, and automation.

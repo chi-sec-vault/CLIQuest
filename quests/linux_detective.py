@@ -21,7 +21,7 @@ def quest_c2_boss():
     )
 
     while True:
-        command = prompt("Phase 1: Use the database to instantly look up 'sshd_config'")
+        command = prompt("Phase 1: Query the system's pre-built index database for 'sshd_config'")
         clean = command.strip().lower()
 
         if clean == "locate sshd_config":
@@ -30,13 +30,13 @@ def quest_c2_boss():
         
         if not clean.startswith("locate"):
             if "find" in clean:
-                error("Normally 'find' is great, but we don't have time to crawl the live hard drive right now. Let's use the tool that checks the pre-built index.")
+                error("Normally 'find' is great, but we don't have time to crawl the live hard drive right now. We need the tool that checks the pre-built index.")
             else:
                 error("We need the specific command that queries the system's file index. Think 'librarian'.")
         elif "sshd_config" not in clean:
-            error("You've got the database tool ready, but you didn't tell it what file to look for. Add 'sshd_config'.")
+            error("You've got the database tool ready, but you didn't tell it what file to look for.")
         else:
-            error("Just a small typo. Type the command to query the index, a space, and then 'sshd_config'.")
+            error("Just a small typo. Type the command to query the index, a space, and then the target file.")
 
     pause()
 
@@ -48,7 +48,7 @@ def quest_c2_boss():
     )
 
     while True:
-        command = prompt("Phase 2: Check the very bottom of '/etc/passwd' to see the newest users")
+        command = prompt("Phase 2: Print only the bottom (tail end) of '/etc/passwd' to see the newest users")
         clean = command.strip().lower()
 
         if clean in ["tail /etc/passwd", "tail -f /etc/passwd"]:
@@ -59,13 +59,13 @@ def quest_c2_boss():
             if "head" in clean:
                 error("That would show us 'root' and the system accounts created years ago! We need to look at the very bottom to see the newest ones.")
             elif "cat" in clean:
-                error("If we 'cat' the password file, it'll dump everyone at once. We just need to check the last few lines.")
+                error("If we read the entire file at once, it'll dump everyone on the screen. We just need to check the last few lines.")
             else:
-                error("Take a second. We're looking for the command that reads the 'tail' end of a document.")
+                error("Take a second. We're looking for the command that reads the trailing end of a document.")
         elif "/etc/passwd" not in clean:
-            error("You have the right tool, but you didn't point it at the user file. Add '/etc/passwd' to the end.")
+            error("You have the right tool, but you didn't point it at the user file. Add the full path to the password file.")
         else:
-            error("Close! Just the command to check the bottom, a space, and then '/etc/passwd'.")
+            error("Check your spacing: command, space, file path.")
 
     pause()
 
@@ -77,37 +77,53 @@ def quest_c2_boss():
     )
 
     while True:
-        command = prompt("Phase 3: 'cat' the file '/etc/services' and pipe it into 'grep ftp'")
+        command = prompt("Phase 3: Output '/etc/services' to the screen, but send the data across a pipe to filter it for 'ftp'")
         clean = command.strip().lower().replace('"', "'")
 
         if clean in ["cat /etc/services | grep ftp", "cat /etc/services | grep 'ftp'"]:
             say(
                 "You nailed it.\n\n"
-                "Thousands of lines flow across the pipe, but your filter catches exactly what\n"
+                "Thousands of lines flow across the bridge, but your filter catches exactly what\n"
                 "we needed. You found the exact port they were targeting."
             )
             break
         
         if "|" not in clean:
-            error("You're missing the bridge! We need to connect the two tools using the vertical pipe '|'.")
+            error("You're missing the bridge! We need to connect the reading tool and the filtering tool using the vertical pipe character.")
         elif not clean.startswith("cat"):
-            error("Start the flow of data first. Use 'cat' to open the file on the left side of the pipe.")
+            error("Start the flow of data first. Use the command to open/read a file on the left side of the pipe.")
         elif "/etc/services" not in clean.split("|")[0]:
-            error("You started 'cat', but what file are we reading? Add '/etc/services' before the pipe.")
+            error("You started the flow, but what file are we reading? Specify '/etc/services' before the pipe.")
         elif "grep" not in clean.split("|")[1]:
-            error("The pipe is flowing, but we need our filter tool on the other side. Add 'grep'.")
+            error("The data is flowing, but we need our text filter tool on the other side of the pipe.")
         elif "ftp" not in clean.split("|")[1]:
             error("The filter is ready, but it doesn't know what to catch! Tell it to look for 'ftp'.")
         else:
-            error("Don't panic. Just piece it together: cat the file, add the pipe, then grep the word.")
+            error("Don't panic. Just piece it together: read the file, add the pipe, then filter the word.")
 
     pause()
 
     say(
         "Got them. The sysadmins just locked them out of the network.\n\n"
-        "Take a step back and look at what you just did. If you open a new terminal right now\n"
+        "Take a step back and look at what you just did. If you open a real terminal right now\n"
         "and type those exact same commands, they will actually work. You used real Linux files\n"
         "to run a real investigation.\n\n"
+        "In fact, let's prove it right now from memory."
+    )
+
+    card(
+        "🌍 FIELD MISSION: REAL-WORLD DETECTIVE",
+        "Open your real Kali terminal and execute your investigation using what you've learned:\n\n"
+        "1. Query the database index for 'sshd_config'.\n"
+        "2. Print the bottom 10 lines of the '/etc/passwd' file.\n"
+        "3. Output the contents of '/etc/services' and pipe it into a text filter looking for 'ftp'.\n\n"
+        "Notice how incredibly fast the pipe (|) filters through thousands of lines of text to give you exactly what you asked for.\n\n"
+        "Press Enter here once you've run your investigation in the real terminal."
+    )
+
+    pause()
+
+    say(
         "You aren't just surviving the terminal anymore. You're controlling it.\n\n"
         "Pull out your journal, Explorer. It's time to log a new achievement."
     )
