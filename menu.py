@@ -3,7 +3,6 @@ from engine import load_progress
 
 
 def show_main_menu(name):
-
     progress = load_progress()
 
     page_header(
@@ -20,10 +19,12 @@ def show_main_menu(name):
     else:
         print("🧭 1. Continue Adventure")
 
-    print("⚔️ 2. Practice Arena")
-    print("🤖 3. Ask CLIQuest")
-    print("📖 4. Explorer Journal")
-    print("⚙️ 5. Settings")
+    # Shifted options to put Replay up front
+    print("⏪ 2. Replay Previous Quests")
+    print("⚔️ 3. Practice Arena")
+    print("🤖 4. Ask CLIQuest")
+    print("📖 5. Explorer Journal")
+    print("⚙️ 6. Settings")
     print("🚪 0. Exit")
 
     divider()

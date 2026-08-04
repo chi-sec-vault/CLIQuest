@@ -12,11 +12,23 @@ from quests.chapter10 import quest_10  # <--- Import Chapter 10
 from quests.chapter11 import quest_11  # <--- At the top
 from quests.chapter12 import quest_12
 from quests.linux_survivor import survivor_challenge  # <--- Import the survivor trial
+# Import Campaign 2 chapters
+from quests.chapter13 import quest_c2_q1  # find
+from quests.chapter14 import quest_c2_q2  # locate
+from quests.chapter15 import quest_c2_q3  # grep
+from quests.chapter16 import quest_c2_q4  # Pipe |
+from quests.chapter17 import quest_c2_q5  # head
+from quests.chapter18 import quest_c2_q6  # tail
+from quests.linux_detective import quest_c2_boss  # Final Exam
 
-def start_adventure():
-
-    progress = load_progress()
-    current = progress["current_quest"]
+def start_adventure(replay_quest=None):
+    # If a specific quest is passed via Replay Mode, use it!
+    # Otherwise, load their saved progress.
+    if replay_quest is not None:
+        current = replay_quest
+    else:
+        progress = load_progress()
+        current = progress["current_quest"]
 
     if current == 1:
         return quest_1()
@@ -36,14 +48,14 @@ def start_adventure():
     elif current == 6:
         return quest_6()
 
-    elif current == 7:  # <--- Handle Chapter 7 dispatch
+    elif current == 7:
         return quest_7()
 
     elif current == 8:
-        return quest_8()  # <--- Handle Chapter 8
+        return quest_8()
 
     elif current == 9:
-        return quest_9()  # <--- Handle Chapter 9
+        return quest_9()
 
     elif current == 10:
         return quest_10()
@@ -55,8 +67,29 @@ def start_adventure():
         return quest_12()
 
     elif current == 13:
-        return survivor_challenge()  # <--- Trigger the final trial!
+        return survivor_challenge()
 
-    print("🚧 More quests coming soon!")
+    elif current == 14:
+        return quest_c2_q1()
+
+    elif current == 15:
+        return quest_c2_q2()
+
+    elif current == 16:
+        return quest_c2_q3()
+
+    elif current == 17:
+        return quest_c2_q4()
+
+    elif current == 18:
+        return quest_c2_q5()
+
+    elif current == 19:
+        return quest_c2_q6()
+
+    elif current == 20:
+        return quest_c2_boss()
+
+    print("\n🚧 More quests coming soon!")
 
     return False
