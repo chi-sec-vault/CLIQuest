@@ -167,10 +167,54 @@ You've learned that Linux commands are not random letters—they are meaningful 
 **Achievement Unlocked:** 🏅 *Linux Survivor*
 
 ---
+# 🔍 Campaign 2 — Linux Detective
 
+## Story
+Now that you know how to navigate and manage files, it's time to find needles in haystacks. A rogue agent is moving through the system, and you need to track them down using advanced search, filtering, and inspection tools.
+
+---
+
+## 🧭 Chapter 13 — The Grid Search
+- **Command:** `find`
+- **Full Meaning:** Find files in a directory hierarchy
+- **Simple Explanation:** Search the live filesystem dynamically based on criteria like names or types.
+
+## 🧭 Chapter 14 — The Index Query
+- **Command:** `locate`
+- **Full Meaning:** Locate files in database
+- **Simple Explanation:** Instantly search a pre-built system index instead of crawling the hard drive.
+
+## 🧭 Chapter 15 — The Filter
+- **Command:** `grep`
+- **Full Meaning:** Global Regular Expression Print
+- **Simple Explanation:** Search inside text files for specific words or patterns.
+
+## 🧭 Chapter 16 — The Assembly Line
+- **Command:** `|` (The Pipe)
+- **Full Meaning:** Pipe output to another command
+- **Simple Explanation:** Connect multiple tools together so data flows directly from one to the next.
+
+## 🧭 Chapter 17 — The Sneak Peek
+- **Command:** `head`
+- **Full Meaning:** Print the top of a file
+- **Simple Explanation:** Instantly view the first 10 lines of a massive file without flooding your screen.
+
+## 🧭 Chapter 18 — The Stakeout
+- **Command:** `tail`
+- **Full Meaning:** Print the bottom of a file
+- **Simple Explanation:** Read the most recent entries at the end of a log file or watch events live (`-f`).
+
+---
+
+# 🏁 Campaign 2 Final Exam — The Rogue Agent
+
+A rogue agent has infiltrated the system and is tampering with files. Using `locate`, `tail`, and the Pipe operator with real system files (`sshd_config`, `/etc/passwd`, `/etc/services`), you track them down and lock them out.
+
+**Achievement Unlocked:** 🎖️ *The Linux Detective Badge*
+
+---
 # 🚀 Future Campaigns
 
-- **Campaign 2 — Linux Detective:** Find files using `find`, `locate`, and `grep`.
 - **Campaign 3 — File Guardians:** Master permissions using `chmod`, `chown`, and `sudo`.
 - **Campaign 4 — Network Explorer:** Explore networking using `ping`, `ip`, `curl`, and `ss`.
 - **Campaign 5 — Cybersecurity Explorer:** Apply Linux skills to security scenarios using `ssh`, `scp`, `nmap`, and `journalctl`.
